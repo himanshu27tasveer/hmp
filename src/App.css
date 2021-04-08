@@ -1,38 +1,349 @@
-.App {
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f46b45;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(43, 43, 43);
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  color: whitesmoke;
+}
+
+#navbar a {
+  float: left;
+  color: white;
   text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navbar #logo {
+  font-size: 35px;
+  font-weight: 200;
+  transition: 0.4s;
+  padding: 20px;
+  text-align: center;
+  color: rgb(255, 112, 17);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#navbar a:hover {
+  color: rgb(255, 112, 17);
+}
+
+#navbar a.active {
+  border-bottom: 2px solid rgb(255, 112, 17);
+  color:white;
+  border-radius: 8px;
+}
+
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* About */
+
+.about{
+  margin-top:250px;
+  padding:15px 15px 25px;
+  font-size:28px;
+  word-wrap: break-word;
+}
+
+
+#mypic{
+  margin-left: 30%;
+  margin-bottom: 20px;
+  border-radius: 70%;
+}
+
+.aboutimgdiv{
+  border-radius: 120px;
+  padding: 10px;
+  
+}
+
+
+
+.section{
+  width: 100%;
+  background-color: rgb(43, 43, 43);
+  color: rgb(255, 112, 17);
+  padding: 20px 0px 20px 0px;
+}
+
+.section > h1 {
+  letter-spacing: 6px;
+}
+
+
+.section > h6 {
+  letter-spacing: 16px;
+  color: gray;
+}
+
+.aboutme{
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: rgb(201, 201, 201);
+  background-color: rgb(43, 43, 43);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 580px){
+  .aboutme{
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(201, 201, 201);
+    background-color: rgb(43, 43, 43);
+    padding: 10px;
+    border-radius: 16px;
+    text-align: justify;
+
+  }
+}
+
+
+/* scrollbar */
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: 12px;
+  scrollbar-color: rgb(255, 112, 17) rgb(43,43,43);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(255, 112, 17);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #2b2b2b;
+  border-radius: 20px;
+  border: 3px solid #ff7011;
+}
+
+/* Projects ------------------------------------------------------------------------------------------------Projects */
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: none;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+  
+}
+
+/* Style the back side */
+.flip-card-back {
+  border-radius: 8px;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  transform: rotateY(180deg);
+  -webkit-box-shadow: 26px 27px 15px 1px rgba(43,43,43,0.64);
+  -moz-box-shadow: 26px 27px 15px 1px rgba(43,43,43,0.64);
+  box-shadow: 26px 27px 15px 1px rgba(43,43,43,0.64);
+}
+
+
+.btndiv{
+  width: 80%;
+  display: block;
+  font-size: 24px;
+  height: 80px;
+  background-color: transparent;
+  border: 3px solid rgb(238, 175, 57);
+  text-align: center;
+  color: rgb(238, 175, 57);
+  padding-top: 18px;
+  margin-left: 10%;
+}
+.btndiv:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(238, 175, 57);
+}
+
+
+
+
+/* Skills---------------------------------------------------------------------------------------------------Skills */
+
+
+.skillset{
+  border: 2px solid rgb(43, 43, 43);
+  padding: 30px;
+  margin: 10px;
+}
+
+
+/* Contact---------------------------------------------------------------------------------------------------Contact  */
+
+.wrap {
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Cbutton {
+  width: 90%;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 7px;
+  word-spacing: 10px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.829);
+  color: rgb(236, 163, 28);
+  }
+
+
+.Cbutton:hover {
+  background-color: rgb(43, 43, 43);
+  box-shadow: 0px 15px 20px rgb(0, 0, 0);
+  color: rgb(238, 175, 57);
+  transform: translateY(-7px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.orDiv{
+  text-align: center;
+  padding: 40px;
+  
+}
+.or{
+  width: 60px;
+  height:60px;
+  padding:10px;
+  padding-top: 0px;
+  opacity: 50%;
+}
+
+
+
+.simg{
+  width: 40px;
+  height:40px;
+}
+
+.simg:hover{
+  transform: translateY(-7px);
+  cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+
+.socialimg{
+  padding: 40px;
+  padding-top: 10px;
+}
+
+.socialbar{
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width:600px){
+  .socialimg{
+    padding: 15px;
   }
 }
+
+
+/* footer-------------------------------------------------------------footer */
+
+#footer{
+  background-color: rgb(43, 43, 43);
+  padding: 10px;
+}
+
+.footerText{
+  text-align: center;
+  color: rgb(255, 112, 17);
+  padding: 20px;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  padding-bottom: 10px;
+}
+
+.footerCopy{
+padding-top: 0px;
+  text-align: center;
+  color: #858585;
+}
+
