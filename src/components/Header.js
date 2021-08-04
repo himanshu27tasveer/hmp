@@ -1,53 +1,87 @@
-import React, { Component } from 'react';
+/* eslint-disable no-lone-blocks */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, {useState, useEffect} from 'react';
 
 
+function myFunction(x) {
+  if (x){
+    closeNav();
+  }
+  else {
+    openNav();
+  }
+}
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  // document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
 
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.padding = "10px 10px 20px";
-        document.getElementById("logo").style.fontSize = "40px";
-        document.getElementById("navbar").style.height = "80px";
-        document.getElementById("logo").style.padding = "10px";
-
-    } else {
-        document.getElementById("navbar").style.padding = "100px 10px";
-        document.getElementById("logo").style.fontSize = "40px";
-        document.getElementById("logo").style.padding = "15px";
-        document.getElementById("navbar").style.height = "auto";
-        var elems = document.querySelectorAll(".active");
-        [].forEach.call(elems, function (el) {
-            el.classList.remove("active");
-        });
-    }
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  // document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
 }
 
 
-class Header extends Component {
+const Header = (props) => {
 
+    const [clas, setClas ] = useState("hamburger");
+    const [tog, setTog] = useState(false);
 
-    render() {
+    useEffect(() => {
+        if (!tog) {
+            setClas("hamburger");
+        }
+        else {
+            setClas("change");
+        }
+    }, [tog, ])
 
-        return (
-            <div>
-
-                <div id="navbar">
-                    <a href="#default" id="logo" style={{ borderLeft: "2px solid rgb(255, 112, 17)", borderBottom: "2px solid rgb(255, 112, 17)" }}>Himanshu Mahawar</a>
-                    <div id="navbar-right">
-                        <a href="#about" onClick={this.props.change}>About Me</a>
-                        <a href="#projects" onClick={this.props.change}>Projects</a>
-                        <a href="#skills" onClick={this.props.change}>Skills</a>
-                        <a href="#contact" onClick={this.props.change}>Contact me</a>
-
-                    </div>
-                </div>
-
+    return (
+        <div id="pnav">
+            <div id="nav">
+              <div>
+                <p id="title">himanshu<img src="./assets/fp.svg" style={{"padding": "2px"}} width="30px" height="35px" alt="</>" />mahawar</p>
+              </div>
+              <div className={clas} onClick={() => {
+                      setTog(!tog);
+                      myFunction(tog);
+                  }}>
+                  <div className="bar1"></div>
+                  <div className="bar2"></div>
+                  <div className="bar3"></div>
+              </div>
             </div>
-        );
-
-    }
+            <div id="lgbtq"></div>
+            <div id="mySidenav" className="sidenav">
+            <div id="navbar-right">
+                <a href="#about" onClick={(e) => {
+                  props.change(e);
+                  setTog(!tog);
+                      myFunction(tog);
+                } }>About Me</a>
+                <a href="#projects" onClick={(e) => {
+                  props.change(e);
+                  setTog(!tog);
+                      myFunction(tog);
+                } }>Projects</a>
+                <a href="#skills" onClick={(e) => {
+                  props.change(e);
+                  setTog(!tog);
+                      myFunction(tog);
+                } }>Skills</a>
+                <a href="#contact" onClick={(e) => {
+                  props.change(e);
+                  setTog(!tog);
+                      myFunction(tog);
+                } }>Contact me</a>
+            </div>
+            </div>
+        </div>
+    );
 }
 
 export default Header;
+ 

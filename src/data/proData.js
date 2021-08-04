@@ -3,7 +3,7 @@ export const proData = {
 
     "BsTodoLi": ["./assets/bstodoli.png", "A Todo app made with react. I stores data in client's browser.", "https://bstodoli.herokuapp.com", "Go to BsTodoLi"],
 
-    "Tasveer": ["./assets/tasveer.png", "My portfolio web site.", "https://himanshu27tasveer.github.io", "Go to Tasveer"],
+    "Tasveer": ["./assets/tasveer.png", "My portfolio web site.", "https://tasveer-hmp.web.app", "Go to Tasveer"],
 
     "Ristorante Confusion": ["./assets/confusion.png", "A Restaurant web site.", "https://github.com/himanshu27tasveer/reactT", "Go to github Repo"],
 

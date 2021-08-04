@@ -43,7 +43,7 @@ class Contact extends React.Component {
                     return response;
                 }
                 else {
-                    let error = new Error(response.status + ' Error: ' + response.statusText);
+                    let error = new Error("Cannot send message right now! Sorry for incovinience.");
                     error.response = error;
                     throw error
                 }
@@ -80,22 +80,20 @@ class Contact extends React.Component {
     render() {
         return (
             <div id="contact">
+                <div id="lgbtq"></div>
                 <br />
                 <div className="section">
-                    <h1 className="text-center head">Contact Me</h1> <h6 className="text-light text-center des">Let's talk about Something</h6>
+                    <h3 className="text-center head">Contact Me</h3> <p className="text-light text-center des gradient-text">Let's talk about Something</p>
                 </div>
-                <br />
                 <br />
                 <br />
                 <div className="container">
                     <div className="wrap">
-                        <button className="Cbutton" onClick={this.toggleModal}>Talk to me</button>
+                        <button className="Cbutton gradient-text" style={{"borderBottom": "1px solid red"}} onClick={this.toggleModal}>Message</button>
                     </div>
-                    <div className="orDiv">
-                        <img className="or" src="./assets/or.png" alt="Or" /> <h2 style={{ display: "inline", color: "rgb(43,43,43" }}>Or</h2>
-                    </div>
+                    
                     <Modal id="modalDiv" isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                        <ModalHeader toggle={this.toggleModal}>Write to me</ModalHeader>
+                        <ModalHeader toggle={this.toggleModal}>Message</ModalHeader>
                         <ModalBody>
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
@@ -107,29 +105,20 @@ class Contact extends React.Component {
                                     <Input type="email" id="email" value={this.state.email} name="email" onChange={this.handleInputChange} />
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="message">Message For Me</Label>
+                                    <Label for="message">Your Message</Label>
                                     <Input type="textarea" name="message" class="form-control" value={this.state.message} rows="5" onChange={this.handleInputChange} id="message" />
                                 </FormGroup>
                                 <br />
-                                <Button type="submit" value="submit" outline color="danger" >Send</Button>
+                                <Button type="submit" style={{"marginLeft": "43%"}} value="submit" outline color="danger" >Send</Button>
                             </Form>
                         </ModalBody>
                     </Modal>
 
                 </div>
-                <div className="socialbar">
-                    <div className="row">
-                        <div className="socialimg"><a href="https://www.facebook.com/himanshu27.stu"><img className="simg" alt="facebook" src="./assets/social/facebook.png" /></a></div>
-                        <div className="socialimg"><a href="https://www.instagram.com/himanshu.tasveer"><img className="simg" alt="instagram" src="./assets/social/instagram.png" /></a></div>
-                        <div className="socialimg"><a href="https://www.linkedin.com/in/im-himanshu27"><img className="simg" alt="linkedin" src="./assets/social/linkedin.png" /></a></div>
-                        <div className="socialimg"><a href="https://www.twitter.com/imhimanshu27"><img className="simg" alt="twitter" src="./assets/social/twitter.png" /></a></div>
-                        <div className="socialimg"><a href="https://github.com/himanshu27tasveer"><img className="simg" alt="github" src="./assets/social/github.png" /></a></div>
+                <br />
+                <br />
+                <br />
 
-                    </div>
-                </div>
-                <br />
-                <br />
-                <br />
             </div>
         );
     }

@@ -9,15 +9,15 @@ class Skills extends Component {
     render() {
         return (
             <div id="skills">
-                <br />
+                <div id="lgbtq"></div>
                 <div className="section">
-                    <h1 className="text-center">Skills</h1> <h6 className="text-light text-center">Never ending Learning</h6>
+                    <h3 className="text-center">Skills</h3> <p className="text-light text-center gradient-text">Never ending Learning</p>
                 </div>
                 <br />
                 <div className="skillset">
 
                     <div className="container">
-                        <div>
+                        <div id="skillcont">
                             <RenderSkills skillset={skillset} />
                         </div>
                     </div>

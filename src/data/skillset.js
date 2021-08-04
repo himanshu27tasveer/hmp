@@ -1,9 +1,21 @@
 export const skillset = {
-    "C++": ["70%", "./assets/programming.png"],
-    "Python": ["60%", "./assets/python.png"],
-    "Ruby": ["40%", "./assets/ruby.png"],
-    "Django": ["75%", "./assets/django.png"],
-    "Flask": ["80%", "./assets/flask.png"],
-    "React": ["60%", "./assets/react.png"],
-    "Redux": ["50%", "./assets/redux.png"]
+    "C++": ["70%", "./assets/logos/c++.svg"],
+    "Python": ["60%", "./assets/logos/python.svg"],
+    "Javascript": ["40%", "./assets/logos/javascript.svg"],
+    "Typescript": ["40%", "./assets/logos/ts.svg"],
+    "HTML5": ["40%", "./assets/logos/html.svg"],
+    "CSS3": ["40%", "./assets/logos/css.svg"],
+    "Webpack": ["40%", "./assets/logos/webpack.svg"],
+    "Material Ui": ["40%", "./assets/logos/mui.svg"],
+    "Bootstrap": ["40%", "./assets/logos/bs.svg"],
+    "Linux": ["40%", "./assets/logos/linux.svg"],
+    "Angular": ["40%", "./assets/logos/angular.svg"],
+    "Django": ["75%", "./assets/logos/django.svg"],
+    "Flask": ["80%", "./assets/logos/flask1.svg"],
+    "React": ["60%", "./assets/logos/react.svg"],
+    "Redux": ["50%", "./assets/logos/redux.svg"],
+    "Express.js": ["40%", "./assets/logos/expressjs.svg"],
+    "PostgreSQL": ["40%", "./assets/logos/psql.svg"],
+    "MongoDB": ["40%", "./assets/logos/mongodb.svg"],
+    "NodeJs": ["50%", "./assets/logos/nodejs.svg"]
 }

@@ -10,9 +10,10 @@ class Projects extends Component {
     render() {
         return (
             <div id="projects">
-                <br />
+                <div id="lgbtq"></div>
+                <br/>
                 <div className="section">
-                    <h1 className="text-center">My Projects</h1> <h6 className="text-light text-center">Made with Love</h6>
+                    <h3 className="text-center">My Projects</h3> <p className="text-light text-center gradient-text">Made with Love</p>
                 </div>
                 <br />
                 <div className="container-fluid">
